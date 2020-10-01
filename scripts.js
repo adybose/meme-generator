@@ -3,6 +3,7 @@ let topTextInput, bottomTextInput, topTextSizeInput, bottomTextSizeInput, imageI
 function generateMeme(img, topText, bottomText, topTextSize, boottomTextSize) {
     let fontSize;
 
+    canvas.width = canvas.height;
     canvas.width = img.width;
     canvas.height = img.height;
 
@@ -27,7 +28,7 @@ function generateMeme(img, topText, bottomText, topTextSize, boottomTextSize) {
 
     // bottom text font size
     fontSize = canvas.width * boottomTextSize;
-    ctx.font = fontSize + 'px impact';
+    ctx.font = fontSize + 'px Impact';
     ctx.lineWidth = fontSize / 15;
 
     ctx.textBaseline = 'bottom';
@@ -35,6 +36,15 @@ function generateMeme(img, topText, bottomText, topTextSize, boottomTextSize) {
         ctx.fillText(t, canvas.width/2, canvas.height - i*fontSize, canvas.width);
         ctx.strokeText(t, canvas.width/2, canvas.height - i*fontSize, canvas.width);
     });
+}
+
+function preview_image() {
+    var reader = new FileReader();
+    reader.onload = function() {
+        var output = document.getElementById('output_image');
+        output.src = reader.result;
+    }
+    reader.readAsDataURL(event.target.files[0]);
 }
 
 function init() {
@@ -48,7 +58,16 @@ function init() {
 
     ctx = canvas.getContext('2d');
 
-    canvas.width = canvas.height = 0;
+    // canvas.width = canvas.height = 0;
+
+    imageInput.addEventListener('change', function() {
+        var reader = new FileReader();
+        reader.onload = function() {
+        // var output = document.getElementById('output_image');
+        canvas.src = reader.result;
+    }
+    reader.readAsDataURL(imageInput.files[0]);
+    })
 
     generateBtn.addEventListener('click', function() {
         let reader = new FileReader();
