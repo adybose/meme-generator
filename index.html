@@ -16,8 +16,9 @@
             </div>
         </div>
         <div class="row editor">
-            <div class="col-md-6">
+            <div class="col-md-6" id="canvas-wrap">
                 <canvas id="meme-canvas">Meme Canvas</canvas>
+                <div id="overlay"></div>
             </div>
             <div class="col-md-6">
                 <form>
@@ -35,29 +36,10 @@
                         <textarea class="form-control" id="bottom-text" placeholder="Enter Bottom Text"></textarea>
                     </div>
                     <button id="generate-btn" class="btn btn-primary">Generate</button>
-                    <!-- <button type="submit" class="btn btn-primary">Create</button> -->
                   </form>
             </div>
         </div>
     </div>
-    <!-- <p>
-        <input type="file" id="image-input" accept="image/*">
-    </p>
-    <p>
-        <textarea id="top-text"></textarea>
-        Text size: <input tyle="range" id="top-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
-    </p>
-    <p>
-        <textarea id="bottom-text"></textarea>
-        Text size: <input tyle="range" id="bottom-text-size-input" min="0.05" max="0.25" value="0.15" step="0.01">
-
-    </p>
-    <p>
-        <button id="generate-btn">Generate</button>
-    </p>
-    <p>
-        <canvas id="meme-canvas"></canvas>
-    </p> -->
 </body>
 <!-- JS, Popper.js, and jQuery -->
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

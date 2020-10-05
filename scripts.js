@@ -39,7 +39,7 @@ function captionMeme(topText, bottomText) {
     ctx.textAlign = 'center';
 
     fontSize = canvas.width / 15;
-    ctx.font = fontSize + 'px impact';
+    ctx.font = fontSize + 'px Arial';
     ctx.lineWidth = 2;
 
     // draw top text
@@ -51,11 +51,11 @@ function captionMeme(topText, bottomText) {
 
     // bottom text font size
     fontSize = canvas.width / 15;
-    ctx.font = fontSize + 'px Impact';
+    ctx.font = fontSize + 'px Arial';
     ctx.lineWidth = 2;
 
     ctx.textBaseline = 'bottom';
-    bottomText.split('\n').forEach(function (t, i) {
+    bottomText.split('\n').reverse().forEach(function (t, i) {
         ctx.fillText(t, canvas.width / 2, canvas.height - i * fontSize, canvas.width);
         ctx.strokeText(t, canvas.width / 2, canvas.height - i * fontSize, canvas.width);
     });
