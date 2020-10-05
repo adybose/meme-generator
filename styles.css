@@ -1,8 +1,37 @@
 :root {
-    font-family: Helvetica;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 14px;
 }
 
 * {
     font: inherit;
+    box-sizing: border-box;
 }
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    padding-top: 10%;
+    
+}
+
+.editor {
+    border: 1px solid darkgray;
+    border-radius: 4px;
+    background-color: #ffffff;
+    padding: 20px 10px;
+}
+
+#meme-canvas {
+    background-color: lightgray;
+    width: 100%;
+}
+
+#canvas-wrap {
+    position: relative;
+} /* Make this a positioned parent */
+
+#overlay {
+    position:absolute;
+    top:20px;
+    left:30px; }
